@@ -259,51 +259,12 @@ class BatSceneController {
     const container = document.getElementById(containerId);
     if (!container) return;
 
+    const photoSrc = PROJECT_CONFIG.finalScreen?.photoSrc || "assets/images/final-pic.jpg";
+
     container.innerHTML = `
-      <svg class="final-moon-hero-art" viewBox="0 0 440 240" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="finalMoonGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#fff8db" stop-opacity="1" />
-            <stop offset="50%" stop-color="#ffd166" stop-opacity="0.6" />
-            <stop offset="100%" stop-color="#ffd166" stop-opacity="0" />
-          </radialGradient>
-        </defs>
-
-        <!-- Glowing Crescent Moon in Distance -->
-        <circle cx="220" cy="70" r="35" fill="url(#finalMoonGlow)" />
-        <circle cx="220" cy="70" r="26" fill="#fffdf2" />
-
-        <!-- Distant Skyline Silhouettes -->
-        <g fill="#090e24" opacity="0.6">
-          <rect x="40" y="130" width="30" height="110" />
-          <rect x="90" y="110" width="40" height="130" />
-          <polygon points="110,85 90,110 130,110" />
-          <rect x="310" y="120" width="45" height="120" />
-          <rect x="375" y="140" width="35" height="100" />
-        </g>
-
-        <!-- Foreground Rooftop where hero is sitting peacefully -->
-        <polygon points="140,240 170,165 270,165 300,240" fill="#04060e" />
-        <rect x="165" y="165" width="110" height="8" fill="#070a18" />
-
-        <!-- Cute Tiny Hero Sitting on edge with dangling feet looking up at stars -->
-        <g transform="translate(210, 130)">
-          <!-- Soft cape resting on roof behind -->
-          <path d="M 8,14 Q 2,24 1,32 Q 10,32 16,28 Z" fill="#020308" />
-          <!-- Body -->
-          <ellipse cx="12" cy="18" rx="6" ry="8" fill="#020308" />
-          <!-- Head tilted upward -->
-          <circle cx="12" cy="8" r="6" fill="#020308" />
-          <polygon points="7,6 5,0 10,3" fill="#020308" />
-          <polygon points="17,6 19,0 14,3" fill="#020308" />
-          <!-- Soft glowing eyes looking at sky -->
-          <circle cx="10" cy="7" r="1" fill="#70d6ff" />
-          <circle cx="14" cy="7" r="1" fill="#70d6ff" />
-          <!-- Dangling cute little feet -->
-          <rect x="8" y="24" width="2.5" height="10" rx="1.2" fill="#020308" />
-          <rect x="13" y="24" width="2.5" height="10" rx="1.2" fill="#020308" />
-        </g>
-      </svg>
+      <div class="final-photo-frame">
+        <img src="${photoSrc}" alt="Raghu" class="final-photo-img" />
+      </div>
     `;
   }
 }

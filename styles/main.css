@@ -936,6 +936,34 @@ html, body {
   margin-bottom: 12px;
 }
 
+.final-photo-frame {
+  width: 100%;
+  max-width: 300px;
+  height: 360px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 180, 200, 0.45);
+  box-shadow: var(--glass-shadow), 0 0 35px rgba(255, 117, 151, 0.35);
+  margin-bottom: 12px;
+  background: rgba(10, 15, 35, 0.6);
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.final-photo-frame:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 45px rgba(255, 117, 151, 0.5);
+  border-color: var(--accent-soft-pink);
+}
+
+.final-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
 /* --------------------------------------------------
    RESPONSIVE OPTIMIZATIONS
    -------------------------------------------------- */

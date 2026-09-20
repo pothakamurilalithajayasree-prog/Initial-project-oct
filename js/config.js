@@ -216,6 +216,7 @@ const PROJECT_CONFIG = {
     credit: "Made with ❤️",
     forWho: "for Raghuu.",
     wish: "Happy Birthday, my boyy. ❤️",
+    photoSrc: "assets/images/final-pic.jpg",
     replayButton: "Replay ↻"
   }
 };
