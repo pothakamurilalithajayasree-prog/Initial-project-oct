@@ -189,7 +189,8 @@ const PROJECT_CONFIG = {
       "Once again…",
       "🎂✨ HAPPY BIRTHDAY, MY BOYYY! 🥳❤️🦇",
       "Please be safe, eat well, sleep well, and take care of yourself. And no matter how far apart we are, remember that there’s always someone here who loves youuu. ❤️",
-      "Happy Birthday, Raghuu. 🫂❤️"
+      "Happy Birthday, Raghuu. 🫂❤️",
+      "I lovee youu soo much bavaa ❤️"
     ],
     continueButton: "THERE'S ONE MORE THING... →"
   },
