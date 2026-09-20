@@ -17,16 +17,12 @@ const PROJECT_CONFIG = {
   // Matching is case-insensitive and trims extra spaces.
   secretNickname: "Ammadu",
 
-  // --------------------------------------------------
-  // BACKGROUND MUSIC CONFIGURATION
-  // --------------------------------------------------
   music: {
-    // If you add a custom MP3 audio file, put the path here (e.g., "assets/audio/background.mp3")
+    // Custom audio file path (bundled in assets/audio/background.mp3)
     audioSrc: "assets/audio/background.mp3",
-    // If audioSrc file is not found, the website will automatically play
-    // a beautiful, soothing, romantic starry synth lullaby generated with Web Audio API!
+    // Automatic high-quality fallback synthesis if audio file fails
     useSynthFallback: true,
-    initialVolume: 0.45
+    initialVolume: 0.9
   },
 
   // --------------------------------------------------
