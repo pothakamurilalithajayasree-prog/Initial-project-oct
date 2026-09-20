@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Project OCT — A Special Surprise</title>
+  <meta name="description" content="A mysterious, cinematic, romantic birthday journey made with love.">
+  <meta name="theme-color" content="#050711">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+
+  <!-- Ambient Dynamic Starfield Canvas -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- Celebratory Fireworks & Floating Hearts Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Ambient Glow Light Orbs -->
+  <div class="ambient-lighting">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+  </div>
+
+  <!-- Interactive Floating Music Toggle Pill -->
+  <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Toggle background music">
+    <span id="music-label">♪ Music OFF</span>
+    <div class="music-wave-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </button>
+
+  <!-- Main Experience Stage -->
+  <main id="app-stage">
+
+    <!-- ==========================================================
+         SCREEN 1 — MYSTERIOUS OPENING
+         ========================================================== -->
+    <section id="screen-1" class="screen-section active">
+      <div class="glass-panel">
+        <div id="s1-line1" class="stagger-line mystery-lead">Hey...</div>
+        <div id="s1-line2" class="stagger-line mystery-sub">I made something for you.</div>
+        <div id="s1-line3" class="stagger-line mystery-hint">But you're going to have to figure it out. 👀</div>
+        <div>
+          <button id="s1-btn" class="btn-primary">LET'S SEE ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 2 — THE LITTLE SECRET (RIDDLE)
+         ========================================================== -->
+    <section id="screen-2" class="screen-section">
+      <div class="glass-panel">
+        <!-- Input Form View -->
+        <div id="secret-form-panel">
+          <div id="s2-intro1" class="secret-intro-text">Before we continue...</div>
+          <div id="s2-intro2" class="secret-intro-text">There's one little secret.</div>
+          <h2 id="s2-question" class="secret-question">What would you call me?</h2>
+
+          <div class="secret-form-group">
+            <div class="secret-input-wrapper">
+              <input type="text" id="secret-input" class="secret-input" placeholder="Type your answer..." autocomplete="off" spellcheck="false">
+            </div>
+            <button id="unlock-btn" class="btn-primary">UNLOCK 🔓</button>
+            <div id="secret-feedback" class="secret-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Correct Unlock View -->
+        <div id="secret-success-panel" class="secret-success-view">
+          <div class="secret-success-icon">❤️</div>
+          <h2 id="s2-correct-title" class="cinematic-title">Hmm... you remembered. ❤️</h2>
+          <p id="s2-correct-sub" class="cinematic-subtitle">Okay. You can come in.</p>
+          <button id="s2-continue-btn" class="btn-primary">CONTINUE →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 3 — FIRST LITTLE SUPERHERO INTERLUDE
+         ========================================================== -->
+    <section id="screen-3" class="screen-section">
+      <div class="glass-panel">
+        <!-- SVG Gotham-Inspired Night Stage with Cute Silhouette -->
+        <div id="bat-scene-1-container" class="bat-stage-container"></div>
+
+        <div class="bat-dialogue-box">
+          <h3 id="s3-dialogue1" class="cinematic-subtitle">Okay... maybe that was unnecessary. 😂</h3>
+          <p id="s3-dialogue2" class="body-text">But we're just getting started.</p>
+          <button id="s3-continue-btn" class="btn-primary">EXPLORE MORE →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 4 — FUN / CURIOUS 3-CHOICE INTERACTION
+         ========================================================== -->
+    <section id="screen-4" class="screen-section">
+      <div class="glass-panel">
+        <h2 id="s4-title" class="cinematic-title">Since you passed the first secret...</h2>
+        <p id="s4-subtitle" class="cinematic-subtitle">Let's see what you find next. 👀</p>
+
+        <!-- 3 Interactive Cards Grid -->
+        <div id="s4-choices-grid" class="choices-grid"></div>
+
+        <!-- Dynamic Message Reveal Box -->
+        <div id="s4-reveal-panel" class="choice-reveal-panel">
+          <span id="s4-reveal-text">Select any card above to explore...</span>
+        </div>
+
+        <button id="s4-continue-btn" class="btn-primary">CONTINUE JOURNEY →</button>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 5 — LONG-DISTANCE SECTION
+         ========================================================== -->
+    <section id="screen-5" class="screen-section">
+      <div class="glass-panel">
+        <!-- Glowing Constellation Map -->
+        <div id="distance-map-stage" class="distance-map-container"></div>
+
+        <!-- Staggered Emotional Quotes -->
+        <div class="distance-stagger-text">
+          <div id="s5-line1" class="distance-line">Different places.</div>
+          <div id="s5-line2" class="distance-line">Different screens.</div>
+          <div id="s5-line3" class="distance-line text-highlight">Same little world. ❤️</div>
+          <div id="s5-line4" class="distance-line distance-quote">Distance doesn't get to decide how important someone is.</div>
+        </div>
+
+        <button id="s5-continue-btn" class="btn-primary">WHAT COMES NEXT →</button>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 6 — "LITTLE THINGS" FLIP CARDS
+         ========================================================== -->
+    <section id="screen-6" class="screen-section">
+      <div class="glass-panel">
+        <h2 id="s6-title" class="cinematic-title">Little Things That Remind Me of You</h2>
+        <p id="s6-subtitle" class="cinematic-subtitle">Tap each card to reveal a little memory ✨</p>
+
+        <!-- Flip Cards Grid -->
+        <div id="s6-cards-grid" class="cards-grid"></div>
+
+        <button id="s6-continue-btn" class="btn-primary">READY FOR THE NEXT STEP →</button>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 7 — SECOND LITTLE SUPERHERO INTERLUDE (SUSPENSE)
+         ========================================================== -->
+    <section id="screen-7" class="screen-section">
+      <div class="glass-panel">
+        <!-- Darker Suspense Sky & Moon Vector Art -->
+        <div id="bat-scene-2-container" class="bat-stage-container"></div>
+
+        <div class="bat-dialogue-box">
+          <h3 id="s7-dialogue1" class="cinematic-subtitle">Okay... enough suspense. 😂</h3>
+          <p id="s7-dialogue2" class="body-text text-highlight">I think you're ready.</p>
+          <button id="s7-reveal-btn" class="btn-primary">REVEAL SURPRISE ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 8 — GRAND BIRTHDAY REVEAL
+         ========================================================== -->
+    <section id="screen-8" class="screen-section">
+      <div class="glass-panel">
+        <div class="bday-reveal-container">
+          <div id="s8-date" class="bday-date-tag">03 • 10 • 2026</div>
+          <h1 id="s8-name" class="bday-recipient-name">RAGHUU...</h1>
+          <div id="s8-greeting" class="bday-greeting-text">HAPPY BIRTHDAY, MY BOYYY ❤️</div>
+          <button id="s8-letter-btn" class="btn-primary floating-element">READ MY LETTER 💌</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 9 — FINAL PERSONAL MESSAGE (EXACT VERBATIM)
+         ========================================================== -->
+    <section id="screen-9" class="screen-section">
+      <div class="letter-container">
+        <div class="letter-header">
+          <span id="s9-title" class="letter-header-title">A Letter From My Heart 💌</span>
+          <span id="s9-date" class="letter-header-date">03 • 10 • 2026</span>
+        </div>
+
+        <div id="s9-letter-body" class="letter-body">
+          <!-- Populated verbatim from config.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <button id="s9-continue-btn" class="btn-primary">THERE'S ONE MORE THING... →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SCREEN 10 — FINAL SECRET
+         ========================================================== -->
+    <section id="screen-10" class="screen-section">
+      <div class="glass-panel">
+        <div id="s10-pause1" class="cinematic-title">Wait...</div>
+        <div id="s10-pause2" class="cinematic-subtitle">You didn't think that was everything, did you? 👀</div>
+        
+        <button id="s10-one-more-btn" class="btn-primary">ONE MORE →</button>
+
+        <div id="s10-quote-box" class="final-secret-stagger" style="display: none;">
+          <div id="s10-line1" class="final-secret-quote">Someday, we'll have all the memories we don't have yet. ❤️</div>
+          <div id="s10-line2" class="body-text" style="color: var(--text-muted);">Until then...</div>
+          <div id="s10-line3" class="cinematic-subtitle" style="color: var(--accent-rose); font-weight: 600;">I'll keep choosing you, from wherever I am.</div>
+          <button id="s10-finish-btn" class="btn-primary">TO FOREVER ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         FINAL SCREEN — PEACEFUL ROOFTOP & REPLAY
+         ========================================================== -->
+    <section id="screen-11" class="screen-section">
+      <div class="glass-panel">
+        <div class="final-scene-container">
+          <div id="final-art-container"></div>
+          <div id="final-date" class="bday-date-tag">03 • 10 • 2026</div>
+          <div style="margin: 8px 0;">
+            <span id="final-credit" class="body-text">Made with ❤️</span>
+            <span id="final-for-who" class="text-highlight" style="font-size: 1.1rem; margin-left: 4px;">for Raghuu.</span>
+          </div>
+          <h2 id="final-wish" class="cinematic-subtitle" style="color: var(--accent-soft-pink); font-size: 1.3rem;">Happy Birthday, my boyy. ❤️</h2>
+          <button id="final-replay-btn" class="btn-secondary" style="margin-top: 14px;">Replay ↻</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/starfield.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/bat-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
